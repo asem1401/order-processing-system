@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  order:
+    build: ./order-service
+    ports:
+      - "8080:8080"
+
+  payment:
+    build: ./payment-service
+
+  notification:
+    build: ./notification-service
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
